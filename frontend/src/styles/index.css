@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ****************************
+    Common Buttons 
+    **************************** */
+  .primary-btn {
+    @apply flex items-center justify-center bg-theme-color border border-theme-color text-[#FFFFFF] text-base font-semibold cursor-pointer rounded-none hover:shadow-none hover:!text-white hover:!bg-theme-color;
+  }
+  .primary-btn-cancel {
+    @apply bg-theme-color text-theme-color text-base font-semibold cursor-pointer rounded-none hover:shadow-none;
+  }
+  .seconday-btn {
+    @apply bg-light-gray cursor-pointer rounded-md border-none flex items-center justify-center text-base text-black hover:!text-black;
+  }
+  .ternary-btn {
+    @apply flex items-center justify-center border border-theme-color text-theme-color text-base  cursor-pointer rounded-none hover:shadow-none;
+  }
+  .cancel-btn {
+    @apply border-[#E4E4E4] text-[#959595] hover:!text-[#959595] hover:!border-[#E4E4E4];
+  }
+  .primary-btn2 {
+    @apply bg-[#7C047A] text-white hover:!text-white hover:!border-[#7C047A];
+  }
+
+  /* ****************************
+    Common Headings 
+    **************************** */
+  .primary-heading {
+    @apply text-base text-theme-color font-semibold;
+  }
+  .seconday-heading {
+    @apply text-base text-black font-semibold;
+  }
+  .ternary-heading {
+    @apply text-base text-white font-semibold;
+  }
+
+  /* ****************************
+    Common Span 
+    **************************** */
+  .primary-span {
+    @apply text-sm text-text-gray;
+  }
+  .seconday-span {
+    @apply text-sm text-black;
+  }
+
+  /* ****************************
+    website fonts
+    **************************** */
+
+  @font-face {
+    font-family: 'cairo';
+    src: url(../assets/fonts/Cairo-VariableFont.ttf) format('truetype');
+  }
+}
+.custom-transition {
+  
+  transition: margin-left 0.5s ease;
+}
+.page-content {
+  min-height: calc(100vh - 80px);
+}

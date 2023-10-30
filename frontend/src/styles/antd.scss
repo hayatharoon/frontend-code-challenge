@@ -1,0 +1,62 @@
+
+// =====================================
+// portal side bar customization
+// =====================================
+.portal-sidebar {
+  :where(.css-dev-only-do-not-override-fpg3f5).ant-menu-light.ant-menu-root.ant-menu-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  :where(.css-dev-only-do-not-override-fpg3f5).ant-menu-light.ant-menu-inline .ant-menu-item {
+    width: 210px;
+    padding-left: 16px !important;
+  }
+  .ant-menu-item-selected {
+    background-color: #7c047a;
+    color: white;
+    position: relative;
+    svg {
+      path {
+        fill: white;
+        stroke: white;
+      }
+    }
+  }
+  .ant-menu-item-selected::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 25px;
+    border-radius: 20%;
+    background-color: white;
+  }
+  :where(.css-dev-only-do-not-override-pr0fja).ant-menu-light.ant-menu-root.ant-menu-inline,
+  :where(.css-dev-only-do-not-override-pr0fja).ant-menu-light > .ant-menu.ant-menu-root.ant-menu-inline,
+  :where(.css-dev-only-do-not-override-pr0fja).ant-menu-light.ant-menu-root.ant-menu-vertical,
+  :where(.css-dev-only-do-not-override-pr0fja).ant-menu-light > .ant-menu.ant-menu-root.ant-menu-vertical {
+    border-inline-end: none !important;
+  }
+  .logout-btn {
+    .ant-btn.ant-btn-icon-only {
+      padding: 16px 26px !important;
+    }
+  }
+}
+.custom-select {
+  .ant-select.ant-select-in-form-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #cbcbcb;
+    border-radius: 0px;
+  }
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
