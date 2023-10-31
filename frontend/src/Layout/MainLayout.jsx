@@ -1,11 +1,11 @@
 import React from 'react';
-import { UserOutlined, HomeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Menu, Image } from 'antd';
-
 import { Link } from 'react-router-dom';
+import { HomeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+
+import Cart from '../assets/icon/Cart';
 import Logo from '../assets/images/rando.png';
 import Header from '../Components/Common/Header';
-import Cart from '../assets/icon/Cart';
 
 function getItem(label, key, icon, children, type) {
   return {

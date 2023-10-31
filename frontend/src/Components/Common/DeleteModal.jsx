@@ -1,7 +1,23 @@
-import { Form } from 'antd';
 import React from 'react';
+import { Form, Button } from 'antd';
 
-const DeleteModal = ({ setIsOpen }) => {
+const DeleteModal = ({
+  id,
+  setIsOpen,
+  onConfirm = () => {
+    console.log('Default confirm function for delete confirm, replace this functions by passing onConfirm function to it.');
+  },
+}) => {
+  // ============= onDelete Handler ==================
+  const onDelete = () => {
+    onConfirm(id)
+      .then(() => {
+        setIsOpen(false);
+      })
+      .catch((err) => {
+        console.log('Error', err?.response?.data?.errors[0]);
+      });
+  };
   return (
     <>
       <div className='flex flex-col gap-y-3 font-cairo'>
@@ -14,14 +30,10 @@ const DeleteModal = ({ setIsOpen }) => {
               <span>Are you sure you want to delete this ?</span>
             </section>
             <div className='flex items-center justify-center gap-x-4 mt-4 '>
-              <Button
-                className={'font-cairo ternary-btn text-dark-red border-dark-red py-5 fon'}
-              >
+              <Button className={'font-cairo ternary-btn text-dark-red border-dark-red py-5 fon'} onClick={() => setIsOpen(false)}>
                 Cancel
               </Button>
-              <Button
-                className={'font-cairo primary-btn border-dark-red bg-dark-red py-5'}
-              >
+              <Button className={'font-cairo ternary-btn border-dark-red bg-dark-red py-5'} onClick={onDelete}>
                 Delete
               </Button>
             </div>
