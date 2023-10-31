@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, Image, message } from 'antd';
 import { useCartStore } from '../../store/store';
-import productImg from '../../assets/images/headphone.jpg';
 
-const ItemCart = ({ id, name, price }) => {
+const ItemCart = ({ id, name, price, img }) => {
   const { cart, setCart } = useCartStore();
 
   const handleAddToCart = () => {
@@ -26,6 +25,7 @@ const ItemCart = ({ id, name, price }) => {
         id,
         name,
         price,
+        img,
         quantity: 1,
       };
 
@@ -40,7 +40,7 @@ const ItemCart = ({ id, name, price }) => {
       <div className='h-full rounded-xl shadow-cla-pink border overflow-hidden shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
         <Image
           className='lg:h-48 md:h-36 w-full object-cover object-center scale-105 transition-all duration-400 hover:scale-100'
-          src={productImg}
+          src={img}
           alt='blog'
           preview={false}
         />

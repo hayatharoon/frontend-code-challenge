@@ -24,7 +24,7 @@ const AddItem = () => {
     {
       label: 'Image Url',
       name: 'img',
-      rules: [ValidationRules.required],
+      rules: [ValidationRules.website, ValidationRules.required],
     },
   ];
   // ========== Submit Handler ===========

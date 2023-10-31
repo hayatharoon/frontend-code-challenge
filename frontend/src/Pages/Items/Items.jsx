@@ -35,6 +35,7 @@ const ItemsPage = () => {
       key: '4',
       title: 'Image Url',
       dataIndex: 'img',
+      ellipsis: true,
     },
     {
       key: '7',
