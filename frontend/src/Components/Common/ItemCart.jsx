@@ -1,26 +1,28 @@
 import React from 'react';
+import { Button, Image } from 'antd';
+import productImg from '../../assets/images/headphone.jpg'
 
-const ItemCart = () => {
+const ItemCart = ({ name, price }) => {
   return (
-      <div class='max-w-sm w-full p-4 sm:w-1/2'>
-        <div class='flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl'>
-          <div class=''>
-            <p class='text-2xl uppercase text-gray-900 font-bold'>Puma Shoes</p>
-            <p class='uppercase text-sm text-gray-400'>The best shoes in the marketplace</p>
-          </div>
-          <div class='prod-img'>
-            <img src='https://unsplash.com/photos/IJjfPInzmdk/download?force=true&w=1920' class='w-full object-cover object-center' />
-          </div>
-          <div class='prod-info grid gap-10'>
-            <div class='flex flex-col md:flex-row justify-between items-center text-gray-900'>
-              <p class='font-bold text-xl'>65 $</p>
-              <button class='px-6 py-2 transition ease-in duration-200 uppercase rounded-full border-2 border-gray-900 focus:outline-none'>
-                Add to cart
-              </button>
-            </div>
+    <div className="p-4 sm:w-1/2 md:w-1/3 2xl:w-1/4 ">
+      <div className="h-full rounded-xl shadow-cla-pink border overflow-hidden shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <Image
+          className="lg:h-48 md:h-36 w-full object-cover object-center scale-105 transition-all duration-400 hover:scale-100"
+          src={productImg}
+          alt="blog"
+          preview={false}
+        />
+        <div className="p-6">
+
+          <h1 className="title-font text-lg font-medium text-gray-600 mb-3">{name}</h1>
+          <div className="flex items-center justify-between flex-wrap">
+            <Button className="ternary-btn hover:scale-105  shadow-cla-blue px-6 rounded-lg">Add to cart</Button>
+            <h2 className="tracking-widest title-font font-medium text-gray-800 mb-1">{`${price} PKR`}</h2>
           </div>
         </div>
       </div>
+    </div>
+
   );
 };
 

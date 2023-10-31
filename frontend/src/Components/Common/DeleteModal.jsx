@@ -1,6 +1,5 @@
 import { Form } from 'antd';
 import React from 'react';
-import CommonBtn from '../CommonBtn';
 
 const DeleteModal = ({ setIsOpen }) => {
   return (
@@ -15,12 +14,16 @@ const DeleteModal = ({ setIsOpen }) => {
               <span>Are you sure you want to delete this ?</span>
             </section>
             <div className='flex items-center justify-center gap-x-4 mt-4 '>
-              <CommonBtn
-                text={'Cancel'}
-                onClick={() => setIsOpen(false)}
+              <Button
                 className={'font-cairo ternary-btn text-dark-red border-dark-red py-5 fon'}
-              />
-              <CommonBtn text={'Delete'} onClick={() => setIsOpen(false)} className={'font-cairo primary-btn border-dark-red bg-dark-red py-5'} />
+              >
+                Cancel
+              </Button>
+              <Button
+                className={'font-cairo primary-btn border-dark-red bg-dark-red py-5'}
+              >
+                Delete
+              </Button>
             </div>
           </Form>
         </div>

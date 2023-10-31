@@ -1,5 +1,6 @@
 import React from 'react';
-import { Input } from 'antd';
+import { Badge, Input } from 'antd';
+import { Link } from "react-router-dom";
 import { UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 
 const { Search } = Input;
@@ -10,15 +11,17 @@ const Header = () => {
       <div className='flex items-center justify-between w-full'>
         <Search placeholder='Search here' className='remove-border !w-[60%]' size='large' />
         <div className='flex items-center gap-x-3'>
-          <ShoppingCartOutlined
-            style={{
-              fontSize: '20px',
-              cursor: 'pointer',
-            }}
-          />
+          <Badge count={1}>
+            <Link to={"/cart"}>
+              <ShoppingCartOutlined
+                className="cursor-pointer"
+                style={{ fontSize: "26px" }}
+              />
+            </Link>
+          </Badge>
           <UserOutlined
             style={{
-              fontSize: '20px',
+              fontSize: '26px',
               cursor: 'pointer',
             }}
           />

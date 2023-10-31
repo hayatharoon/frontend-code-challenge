@@ -1,22 +1,34 @@
+import { useQuery } from 'react-query';
 import ItemCart from '../../Components/Common/ItemCart';
+import apiClient from '../../axios/axios';
+import { Spin } from 'antd';
 
 const Home = () => {
+  // ==================== GET All Items ================
+  const { data, isLoading } = useQuery({
+    queryKey: ['get-all-items'],
+    queryFn: () => apiClient.get('/items').then(data => data?.data)
+  });
+
   return (
-    <div>
-      {/* <h1 className='text-black text-3xl'>Home Page</h1> */}
-      <div className='flex flex-wrap flex-grow'>
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-      </div>
-    </div>
+    <>
+      {
+        isLoading ? (
+          <div className='h-screen w-full flex justify-center items-center'>
+            <Spin size='large' />
+          </div>
+        ) : (
+          <div className='flex flex-wrap flex-grow'>
+            {
+              data?.map(({ id, name, price, img }) => (
+                <ItemCart key={id} name={name} price={price} img={img} />
+              ))
+            }
+          </div >
+
+        )
+      }
+    </>
   );
 };
 
