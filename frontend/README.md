@@ -1,8 +1,39 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# RandoStore React Application
 
-Currently, two official plugins are available:
+## Frontend Code Challenge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+## Project Setup
+
+1. Clone the project
+
+```bash
+    git clone https://github.com/hayatharoon/frontend-code-challenge.git
+```
+2. Install dependencies for frontend and backend
+```bash
+    cd frontend
+    npm Install
+
+    cd backend 
+    npm install 
+```
+3. Run the Backend Application:
+```bash
+    npm start
+```
+4. Run the Frontend Application:
+```bash
+    npm run dev
+```
+## Application Functionality
+
+- Application add new item through the front end application.
+- You can see the list of all the items on the items page.
+- Application is able to add an item to the cart.
+- The checkout page have all the items that we chose to checkout.
+- Items in cart are persistant amongst different browser tabs.
+- We can sort the list through the item price
