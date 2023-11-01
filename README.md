@@ -31,9 +31,9 @@
 ```
 ## Application Functionality
 
-- Application add new item through the front end application.
+- Application add new item through the front end.
 - You can see the list of all the items on the items page.
 - Application is able to add an item to the cart.
 - The checkout page have all the items that we chose to checkout.
 - Items in cart are persistant amongst different browser tabs.
-- We can sort the list through the item price
+- We can sort the items list through the item price
