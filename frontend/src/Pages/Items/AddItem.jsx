@@ -80,11 +80,11 @@ const AddItem = () => {
           {/* ================ Button ================ */}
           <div className='flex justify-end gap-[10px] items-center'>
             <Button
-              className='border-[#7c047a] text-[#7c047a] font-semibold h-[36px] w-[120px] hover:!border-[#7c047a] hover:!text-[#7c047a]'
+              className='ternary-btn border-[#7c047a] text-[#7c047a]  h-[36px] w-[120px] hover:!border-[#7c047a] hover:!text-[#7c047a]'
               onClick={handleCancel}>
               Cancel
             </Button>
-            <Button htmlType='submit' className='bg-[#7c047a] text-[#ffffff] font-semibold h-[36px] w-[120px] hover:!text-[#ffffff]'>
+            <Button htmlType='submit' className='primary-btn h-[36px] w-[120px]'>
               Add Item
             </Button>
           </div>

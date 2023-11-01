@@ -37,3 +37,4 @@
 - The checkout page have all the items that we chose to checkout.
 - Items in cart are persistant amongst different browser tabs.
 - We can sort the items list through the item price
+- Input validation are added to the add item form.

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .primary-btn {
+    @apply bg-theme-color flex items-center justify-center text-base  cursor-pointer rounded-none text-white hover:!text-white hover:shadow-none;
+  }
   .ternary-btn {
     @apply flex items-center justify-center border border-black text-base  cursor-pointer rounded-none text-black hover:!text-black hover:!border-black hover:shadow-none;
   }
