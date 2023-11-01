@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Table, message } from 'antd';
+import { Table, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '../../assets/icon/DeleteIcon';
 import { useMutation, useQuery } from 'react-query';
 import apiClient from '../../axios/axios';
 import ModalLayout from '../../Components/Common/ModalLayout';
 import DeleteModal from '../../Components/Common/DeleteModal';
+import TableHeader from '../../Components/Common/TableHeader';
 
 const ItemsPage = () => {
   // ================ Local States ====================
@@ -30,6 +31,7 @@ const ItemsPage = () => {
       key: '3',
       title: 'Price',
       dataIndex: 'price',
+      sorter: (a, b) => a.price - b.price
     },
     {
       key: '4',
@@ -68,7 +70,6 @@ const ItemsPage = () => {
   };
 
   // ====================== API ========================
-
   // ==================== GET All Items ================
   const { data, isLoading, refetch } = useQuery({
     queryKey: ['get-all-items'],
@@ -98,25 +99,26 @@ const ItemsPage = () => {
 
   return (
     <>
+      {/* ==================== Delete Modal ====================== */}
       <>
         <ModalLayout setIsOpen={setShowDeleteModal} isOpen={showDeleteModal} outSideClick={false}>
           <DeleteModal id={recordId} setIsOpen={setShowDeleteModal} onConfirm={onConfirm} />
         </ModalLayout>
       </>
-      <div className={`bgShadow mt-10`}>
-        <div className='flex items-center justify-between bg-white px-[16px] py-4 border-b border-border-gray rounded-t-xl'>
-          <div className=''>
-            <h1 className='primary-heading'>{'All Items'}</h1>
-          </div>
+      {/* ========================================================= */}
 
-          <Button
-            className={'ternary-btn font-cairo text-[14px] py-4 w-[120px] bg-theme-color text-[#ffff] hover:!text-[#ffff]'}
-            onClick={() => navigate('/items/add-item')}>
-            Add Item
-          </Button>
-        </div>
-
-        <Table columns={columns} dataSource={data} loading={isLoading} pagination={false} />
+      <div className={`bgShadow mt-10 bg-white`}>
+        <TableHeader
+          title={'All Items'}
+          btnText={'Add Item'}
+          btnHandler={() => navigate('/items/add-item')}
+        />
+        <Table
+          columns={columns}
+          dataSource={data}
+          loading={isLoading}
+          pagination={false}
+        />
       </div>
     </>
   );

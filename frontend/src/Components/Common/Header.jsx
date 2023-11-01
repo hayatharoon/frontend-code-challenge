@@ -9,7 +9,7 @@ const { Search } = Input;
 const Header = () => {
   const { cart } = useCartStore();
   return (
-    <header className='flex items-center h-[80px] px-[34px] py-[16px]'>
+    <section className='flex items-center h-[80px] px-[34px] py-[16px]'>
       <div className='flex items-center justify-between w-full'>
         <Search placeholder='Search here' className='remove-border !w-[60%]' size='large' />
         <div className='flex items-center gap-x-3'>
@@ -26,7 +26,7 @@ const Header = () => {
           />
         </div>
       </div>
-    </header>
+    </section>
   );
 };
 

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useMutation } from 'react-query';
 import apiClient from '../../axios/axios';
 import { ValidationRules } from '../../Utils/Hooks/Validation';
+import TableHeader from '../../Components/Common/TableHeader';
 
 const AddItem = () => {
   const [form] = Form.useForm();
@@ -66,12 +67,7 @@ const AddItem = () => {
 
       <div className={`w-full rounded-md h-auto bg-white bgShadow`}>
         {/* ================ Form Header ================ */}
-        <div className='flex items-center justify-between p-5 border-b border-border-gray'>
-          <div>
-            <h1 className='primary-heading text-xl'>Add New Item</h1>
-            <span className='primary-span'>Enter the following details below to create new Item</span>
-          </div>
-        </div>
+        <TableHeader title={'Add New Item'} description={'Enter the following details below to create new Item'} />
         {/* ================ Form ================ */}
         <Form form={form} onFinish={finishHandler} layout='vertical' className='w-full lg:w-[70%] xl:w-[60%] flex flex-col  gap-y-4 p-5'>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-x-6  gap-y-4 '>

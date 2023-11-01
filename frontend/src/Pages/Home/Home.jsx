@@ -1,13 +1,18 @@
 import { useQuery } from 'react-query';
 import ItemCart from '../../Components/Home/ItemCart';
 import apiClient from '../../axios/axios';
-import { Spin } from 'antd';
+import { Spin, message } from 'antd';
 
 const Home = () => {
   // ==================== GET All Items ====================
   const { data, isLoading } = useQuery({
     queryKey: ['get-all-items'],
-    queryFn: () => apiClient.get('/items').then((data) => data?.data),
+    queryFn: () => apiClient.get('/items')
+      .then((data) => data?.data)
+      .catch(err => {
+        message.error('Error occured in get all items');
+        console.log(err)
+      })
   });
 
   return (
